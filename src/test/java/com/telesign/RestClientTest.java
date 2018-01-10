@@ -54,8 +54,7 @@ public class RestClientTest extends TestCase {
         String expectedAuthorizationHeader = "TSA FFFFFFFF-EEEE-DDDD-1234-AB1234567890:" +
                 "2xVlmbrxLjYrrPun3G3WMNG6Jon4yKcTeOoK9DjXJ/Q=";
 
-        Map<String, String> actualHeaders = RestClient.generateTelesignHeaders(this.customerId,
-                this.apiKey,
+        Map<String, String> actualHeaders = new RestClient(this.customerId, this.apiKey).generateTelesignHeaders(
                 methodName,
                 resource,
                 bodyParamsUrlEncoded,
@@ -78,8 +77,7 @@ public class RestClientTest extends TestCase {
         String expectedAuthorizationHeader = "TSA FFFFFFFF-EEEE-DDDD-1234-AB1234567890:" +
                 "h8d4I0RTxErbxYXuzCOtNqb/f0w3Ck8e5SEkGNj01+8=";
 
-        Map<String, String> actualHeaders = RestClient.generateTelesignHeaders(this.customerId,
-                this.apiKey,
+        Map<String, String> actualHeaders = new RestClient(this.customerId, this.apiKey).generateTelesignHeaders(
                 methodName,
                 resource,
                 bodyParamsUrlEncoded,
@@ -101,8 +99,7 @@ public class RestClientTest extends TestCase {
         String expectedAuthorizationHeader = "TSA FFFFFFFF-EEEE-DDDD-1234-AB1234567890:" +
                 "aUm7I+9GKl3ww7PNeeJntCT0iS7b+EmRKEE4LnRzChQ=";
 
-        Map<String, String> actualHeaders = RestClient.generateTelesignHeaders(this.customerId,
-                this.apiKey,
+        Map<String, String> actualHeaders = new RestClient(this.customerId, this.apiKey).generateTelesignHeaders(
                 methodName,
                 resource,
                 "",
@@ -119,8 +116,7 @@ public class RestClientTest extends TestCase {
         String methodName = "GET";
         String resource = "/v1/resource";
 
-        Map<String, String> actualHeaders = RestClient.generateTelesignHeaders(this.customerId,
-                this.apiKey,
+        Map<String, String> actualHeaders = new RestClient(this.customerId, this.apiKey).generateTelesignHeaders(
                 methodName,
                 resource,
                 "",
